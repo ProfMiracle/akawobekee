@@ -45,7 +45,7 @@ Route::prefix("vendor")->group(function (){
         Route::post("plan/{id}/edit", [\App\Http\Controllers\Vendor::class, "editPlan"]);
 
         Route::get("profile", [\App\Http\Controllers\Vendor::class, "profileView"])->name("vendor-profile");
-        Route::post("profile", [\App\Http\Controllers\Vendor::class, "storeProfile"])->name("vendor-profile");
+        Route::post("profile", [\App\Http\Controllers\Vendor::class, "storeProfile"]);
 
         Route::get("change-password", [\App\Http\Controllers\Vendor::class, "showChangePassword"])->name("change-password");
         Route::post("change-password", [\App\Http\Controllers\Vendor::class, "changePassword"]);
@@ -53,7 +53,7 @@ Route::prefix("vendor")->group(function (){
         Route::get("wallet", [\App\Http\Controllers\Vendor::class, "showWallet"])->name("vendor-wallet");
         Route::post("wallet", [\App\Http\Controllers\Vendor::class, "addAccount"]);
 
-        Route::get("withdraw", [\App\Http\Controllers\Vendor::class, "showWithdraw"])->name("admin");
+        Route::get("withdraw", [\App\Http\Controllers\Vendor::class, "showWithdraw"])->name("vendor-withdraw");
     });
 });
 
@@ -75,4 +75,6 @@ Route::middleware("auth:web")->group(function (){
 
     Route::get("/vendors", [\App\Http\Controllers\User::class, "vendorList"])->name("vendor-list");
     Route::get("/vendor/{id}", [\App\Http\Controllers\User::class, "viewSingleVendor"])->name("single-vendor");
+
+    Route::get("/profile")->name("profile");
 });
