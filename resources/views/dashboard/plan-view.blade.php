@@ -6,7 +6,8 @@
         <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
         <div class="card">
             <div class="card-body">
-                <table id='empTable' class="dataTables_wrapper dt-bootstrap4">
+                <div class="table-responsive">
+                <table id='dataTable_wrapper' class="dataTables_wrapper dt-bootstrap4" style="width: 100%">
                     <thead>
                     <tr>
                         <td>id</td>
@@ -18,6 +19,7 @@
                     </tr>
                     </thead>
                 </table>
+                </div>
             </div>
         </div>
     </div>
@@ -26,7 +28,7 @@
     <script type="text/javascript">
         $(document).ready(function(){
             // DataTable
-            $('#empTable').DataTable({
+            $('#dataTable_wrapper').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: "{{route('plans-datatable')}}",

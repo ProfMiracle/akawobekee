@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name("index");
 
 Route::prefix("vendor")->group(function (){
     Route::get("login", [\App\Http\Controllers\Auth\LoginController::class, "showVendorLoginForm"])->name("vendor-login");
@@ -76,5 +76,27 @@ Route::middleware("auth:web")->group(function (){
     Route::get("/vendors", [\App\Http\Controllers\User::class, "vendorList"])->name("vendor-list");
     Route::get("/vendor/{id}", [\App\Http\Controllers\User::class, "viewSingleVendor"])->name("single-vendor");
 
-    Route::get("/profile")->name("profile");
+    Route::get("/profile", [\App\Http\Controllers\User::class, 'profileView'])->name("profile");
+    Route::post("/profile", [\App\Http\Controllers\User::class, 'storeProfile']);
+
+    Route::get("ajaxMyPlans", [\App\Http\Controllers\User::class, 'myPlans'])->name("ajaxMyPlan");
+    Route::get("/myplans", [\App\Http\Controllers\User::class, 'viewMyPlans'])->name('my-plans');
+
+    /**
+     * wallet
+     */
+    Route::get("/edit_account", [\App\Http\Controllers\User::class, 'accountDetails'])->name("edit-account");
+    Route::post("/edit_account", [\App\Http\Controllers\User::class, 'addAccount']);
+    Route::get("/withdraw", [\App\Http\Controllers\User::class, 'withdraw'])->name("user-withdraw");
+    Route::post("/withdraw",[\App\Http\Controllers\User::class, 'submitWithdraw']);
+
+    Route::get("/plan-subscribe/{id}", [\App\Http\Controllers\User::class, 'subscribeToPlan']);
+
+    /**
+     * fund wallet
+     */
+    Route::get('/fund-wallet', [\App\Http\Controllers\Pay::class, "fundWallet"])->name('fund-wallet');
+    Route::post('/fund-wallet', [\App\Http\Controllers\Pay::class, "initialize"]);
+    Route::post('/fund/callback', [\App\Http\Controllers\Pay::class, "fundWalletCallback"])->name('fund-callback');
+
 });

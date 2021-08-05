@@ -6,7 +6,7 @@
         <h1 class="h3 mb-4 text-gray-800">Creat Plan</h1>
         <div class="card">
             <div class="card-body">
-                <form action="">
+                <form action="" method="post">
                     @csrf
                     <div class="row">
                         <div class="col-8">

@@ -17,9 +17,9 @@ class CreatePlanUsersTable extends Migration
             $table->id()->autoIncrement();
             $table->integer("user_id");
             $table->integer("plan_id");
-            $table->string("name");
-            $table->string("email");
-            $table->string("phone");
+            $table->string("name")->nullable();
+            $table->string("email")->nullable();
+            $table->string("phone")->nullable();
             $table->string("join_date");
             $table->string("mature_date");
             $table->timestamps();

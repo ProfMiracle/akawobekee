@@ -6,7 +6,7 @@
         <h1 class="h3 mb-4 text-gray-800">Vendor List</h1>
         <div class="card">
             <div class="card-body">
-                <table id='empTable' class="dataTables_wrapper dt-bootstrap4">
+                <table id='empTable' class="dataTables_wrapper dt-bootstrap4" style="width: 100%">
                     <thead>
                     <tr>
                         <td style="width: 61.6667px;">id</td>

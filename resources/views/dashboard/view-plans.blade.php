@@ -3,16 +3,16 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-4 text-gray-800">Users on plan</h1>
+        <h1 class="h3 mb-4 text-gray-800">My Plans</h1>
         <div class="card">
             <div class="card-body">
                 <table id='empTable' class="dataTables_wrapper dt-bootstrap4" style="width: 100%">
                     <thead>
                     <tr>
-                        <td>id</td>
+                        <td>Franchise</td>
                         <td>Name</td>
-                        <td>Email</td>
-                        <td>Phone</td>
+                        <td>Amount</td>
+                        <td>Duration</td>
                         <td>Join Date</td>
                         <td>Mature Date</td>
                     </tr>
@@ -29,17 +29,17 @@
             $('#empTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{url("vendor/plan/$plan->id/users/ajax")}}",
+                cache: false,
+                ajax: "{{route("ajaxMyPlan")}}",
                 columns: [
-                    { data: 'id' },
+                    { data: 'franchise' },
                     { data: 'name' },
-                    { data: 'email' },
-                    { data: 'phone' },
-                    { data: 'join_date' },
-                    { data: 'mature_date' },
+                    { data: 'amount' },
+                    { data: 'duration' },
+                    { data: 'join date' },
+                    { data: 'mature date' },
                 ]
             });
-
         });
     </script>
 @endsection

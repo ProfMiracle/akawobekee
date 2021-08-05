@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Auth;
 
 class Vendor extends Controller
 {
+    /**
+     * @var \Illuminate\Contracts\Auth\Authenticatable|null
+     */
+    private $user;
+
     public function __construct()
     {
         $this->user = Auth::guard("vendor")->user();
@@ -24,6 +29,7 @@ class Vendor extends Controller
 
     public function storePlan(Request $request)
     {
+        $this->user = Auth::guard("vendor")->user();
         $request->validate([
             'name'=>'required|string',
             'amount'=>'required',
@@ -38,6 +44,7 @@ class Vendor extends Controller
             'duration'=>$request->duration,
             'commission'=>$request->duration
         ]);
+        return redirect()->back()->with("success", "plan created successfully");
     }
 
     public function viewPlans()
@@ -88,9 +95,9 @@ class Vendor extends Controller
                 "amount" => $record->amount,
                 "duration" => $record->duration,
                 "commission" => $record->commission,
-                "action"=>"<a href=\"route('plan-view')\" class=\"btn-primary\"><i class=\"fa fa-eye\"></i>View</a>
-                            <a href=\"route('plan-edit')\" class=\"btn-secondary\"><i class=\"fa fa-pen\"></i>Edit</a>
-                            <a href=\"\" class=\"btn-secondary\"><i class=\"fa fa-trash\"></i>Delete</a>"
+                "action"=>"<a href=\"plan/$record->id\" class=\"btn btn-primary\"><i class=\"\"></i>View</a>
+                            <a href=\"plan/$record->id/edit\" class=\"btn btn-secondary\"><i class=\"\"></i>Edit</a>
+                            <a href=\"\" class=\"btn btn-warning\"><i class=\"\"></i>Delete</a>"
             );
             $x++;
         }
@@ -109,7 +116,6 @@ class Vendor extends Controller
     public function viewPlan(Request $request)
     {
         $plan = Plan::findOrFail($request->id);
-
         return view("dashboard.view-plan", compact("plan"));
     }
 

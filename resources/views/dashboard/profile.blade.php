@@ -27,29 +27,31 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="fname">First Name</label>
-                                    <input type="text" name="fname" class="form-control">
+                                    <input type="text" name="fname" class="form-control" value="{{$user->first_name}}">
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="form-group">
                                     <label for="lname">Last Name</label>
-                                    <input type="text" name="lname" class="form-control">
+                                    <input type="text" name="lname" class="form-control" value="{{$user->last_name}}">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input type="tel" name="phone" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="text" name="email" class="form-control">
+                                    <input type="text" name="email" class="form-control"  value="{{$user->email}}">
                                 </div>
                             </div>
+                            @if(\Illuminate\Support\Facades\Auth::guard('vendor')->check())
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="email">Franchise</label>
+                                        <input type="text" name="franchise" class="form-control"  value="{{$user->franchise}}" disabled>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <div class="card-footer text-right">

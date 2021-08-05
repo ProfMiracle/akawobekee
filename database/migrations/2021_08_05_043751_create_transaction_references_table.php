@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWithrawRequestsTable extends Migration
+class CreateTransactionReferencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateWithrawRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('withraw_requests', function (Blueprint $table) {
+        Schema::create('transaction_references', function (Blueprint $table) {
             $table->id();
-            $table->integer("user_id");
-            $table->enum('user_type', ['vendor', 'user'])->default('user');
-            $table->string("amount");
-            $table->integer("status")->default(0);
+            $table->integer('user_id');
+            $table->enum('type', ['fund', 'plan'])->default('fund');
+            $table->string('reference');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateWithrawRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('withraw_requests');
+        Schema::dropIfExists('transaction_references');
     }
 }

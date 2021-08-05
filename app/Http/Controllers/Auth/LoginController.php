@@ -62,5 +62,6 @@ class LoginController extends \App\Http\Controllers\Controller
         }else{
             Auth::logout();
         }
+        return redirect()->route("index");
     }
 }

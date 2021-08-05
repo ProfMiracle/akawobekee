@@ -16,6 +16,7 @@ class CreateAccountDetailsTable extends Migration
         Schema::create('account_details', function (Blueprint $table) {
             $table->id();
             $table->integer("user_id");
+            $table->enum('user_type', ['vendor', 'user'])->default('user');
             $table->string("account_name");
             $table->string("account_number");
             $table->string("bank_name");

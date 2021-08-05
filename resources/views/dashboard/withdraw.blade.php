@@ -13,7 +13,7 @@
         <h1 class="h3 mb-4 text-gray-800">Requests</h1>
         <div class="card">
             <div class="card-body">
-                <table id='empTable' class="dataTables_wrapper dt-bootstrap4">
+                <table id='empTable' class="dataTables_wrapper dt-bootstrap4" style="width: 100%">
                     <thead>
                     <tr>
                         <td>id</td>
@@ -38,7 +38,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
-                <form action="">
+                <form action="" method="post">
                     @csrf
                 <!-- Modal body -->
                 <div class="modal-body">
@@ -66,7 +66,7 @@
             $('#empTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{url("withdraw-request:ajax?user=$user->id")}}",
+                ajax: "{{url("withdraw-request:ajax?type=$type")}}",
                 columns: [
                     { data: 'id' },
                     { data: 'amount' },

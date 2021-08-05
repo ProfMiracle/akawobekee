@@ -10,11 +10,9 @@
                 <div class="col-xl-4" style="margin-bottom: 10px">
                     <div class="card">
                         <div class="card-body p-5">
-                            <div class="card-title">
-                                {{$account->number??""}}
-                            </div>
-                            <div class="card-subtitle mb-4">Bank: {{$account->bank??""}}</div>
-                            <div class="card-subtitle mb-4">Account name: {{$account->name??""}}</div>
+                            <h3 style="font-weight: bolder">{{$account->account_number??""}}</h3>
+                            <div class="card-subtitle">Bank: {{$account->bank_name??""}}</div>
+                            <div class="card-subtitle">Account name: {{$account->account_name??""}}</div>
                         </div>
                     </div>
                 </div>

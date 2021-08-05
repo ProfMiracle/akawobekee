@@ -19,7 +19,7 @@
                 <div class="col-xl-8" style="height:60vh; overflow-y: scroll;">
                     <h3>Plans</h3>
                     @forelse($plans as $plan)
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card {{random_color()}} shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -33,7 +33,34 @@
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-check-circle fa-2x text-gray-300" id="subscribe" data-id="{{$plan->id}}">Subscribe</i>
+                                            <a href="#" data-id="{{$plan->id}}" data-toggle="modal" data-target="#myModal{{$plan->id}}">
+                                                <i class="fas fa-check-circle fa-2x text-gray-300">Subscribe</i>
+                                            </a>
+                                            <!-- The Modal -->
+                                            <div class="modal" id="myModal{{$plan->id}}">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Hello!</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+
+                                                        <!-- Modal body -->
+                                                        <div class="modal-body">
+                                                            Are you sure you want to subscribe to: {{$plan->name}}?
+                                                        </div>
+
+                                                        <!-- Modal footer -->
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            <a href="{{url('/plan-subscribe/'.$plan->id)}}" class="btn btn-primary">Yes</a>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -54,6 +81,8 @@
             </div>
         </form>
     </div>
+
+
 @endsection
 @section("custom-script")
     <script>
