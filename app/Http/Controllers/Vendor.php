@@ -97,7 +97,7 @@ class Vendor extends Controller
                 "commission" => $record->commission,
                 "action"=>"<a href=\"plan/$record->id\" class=\"btn btn-primary\"><i class=\"\"></i>View</a>
                             <a href=\"plan/$record->id/edit\" class=\"btn btn-secondary\"><i class=\"\"></i>Edit</a>
-                            <a href=\"\" class=\"btn btn-warning\"><i class=\"\"></i>Delete</a>"
+                            <a href=\"plan/$record->id/delete\" class=\"btn btn-warning\"><i class=\"\"></i>Delete</a>"
             );
             $x++;
         }
@@ -138,13 +138,14 @@ class Vendor extends Controller
 
         // Total records
         $totalRecords = PlanUser::select('count(*) as allcount')->count();
-        $totalRecordswithFilter = PlanUser::select('count(*) as allcount')->where('name', 'like', '%' .$searchValue . '%')->count();
+        $totalRecordswithFilter = PlanUser::select('count(*) as allcount')->where('join_date', 'like', '%' .$searchValue . '%')->count();
 
         // Fetch records
-        $records = PlanUser::orderBy($columnName,$columnSortOrder)
+        $records = PlanUser::orderBy('plan_users.'.$columnName,$columnSortOrder)
+            ->join('users', 'plan_users.user_id', '=', 'users.id')
             ->where('plan_id', $request->id)
-            ->where('plan_users.name', 'like', '%' .$searchValue . '%')
-            ->select('plan_users.*')
+            ->where('users.first_name', 'like', '%' .$searchValue . '%')
+            ->select('plan_users.*', 'users.*')
             ->skip($start)
             ->take($rowperpage)
             ->get();
@@ -190,18 +191,24 @@ class Vendor extends Controller
          */
         //TODO
         $p = Plan::find($request->id);
-        $p->name = "";
-        $p->amount = "";
-        $p->duration = "";
-        $p->commission = "";
+        $p->name = $request->name;
+        $p->amount = $request->amount;
+        $p->duration = $request->duration;
+        $p->commission = $request->commission;
         $p->save();
 
-        return redirect()->back()->with("");
+        return redirect()->back()->with("success", 'plan edited successfully');
     }
 
     public function showEditPlan(Request $request)
     {
-        $plan = $request->id;
+        $plan = Plan::find($request->id);
+        $plan_users = PlanUser::where('plan_id', $request->id)
+            ->where('status', 0)->get();
+        if (!$plan_users->isEmpty())
+        {
+            return redirect()->back()->with('error', 'cannot edit plan with subscribers');
+        }
         return view("dashboard.plan-edit", compact("plan"));
     }
 
@@ -238,5 +245,18 @@ class Vendor extends Controller
     public function showWithdraw()
     {
         return (new Wallet())->showWithdrawRequest("vendor");
+    }
+
+    public function deletePlan(Request $request)
+    {
+        $users = PlanUser::where('plan_id', $request->id)->get();
+        if (!$users->isEmpty())
+        {
+            return redirect()->back()->with("error", "cannot delete a plan with a subscriber");
+        }
+
+        Plan::destroy($request->id);
+
+        return redirect()->back()->with("success", "plan deleted successfully");
     }
 }

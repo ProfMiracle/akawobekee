@@ -18,9 +18,8 @@ class CreateVendorsTable extends Migration
             $table->string("first_name");
             $table->string("last_name");
             $table->string("email");
-            $table->string("phone");
             $table->string("password");
-            $table->string("photo");
+            $table->string("photo")->nullable();
             $table->string("franchise");
             $table->integer("status")->default(1);
             $table->timestamps();

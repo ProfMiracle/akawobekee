@@ -55,14 +55,14 @@
                                     @enderror
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
+                            <button type="submit" class="btn btn-primary btn-user btn-block">Register</button>
                         </form>
                         <hr>
                         <div class="text-center">
-                            <a class="small" href="forgot-password.html">Forgot Password?</a>
+                            <a class="small" href="#">Forgot Password?</a>
                         </div>
                         <div class="text-center">
-                            <a class="small" href="login.html">Already have an account? Login!</a>
+                            <a class="small" href="{{(url(request()->route()->getPrefix()) == "vendor")?route('vendor-login'):route('login')}}">Already have an account? Login!</a>
                         </div>
                     </div>
                 </div>

@@ -43,10 +43,10 @@
                                 </form>
                                 <hr>
                                 <div class="text-center">
-                                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                    <a class="small" href="#">Forgot Password?</a>
                                 </div>
                                 <div class="text-center">
-                                    <a class="small" href="register.html">Create an Account!</a>
+                                    <a class="small" href="{{(url(request()->route()->getPrefix()) == "vendor")?route('vendor-register'):route('register')}}">Create an Account!</a>
                                 </div>
                             </div>
                         </div>

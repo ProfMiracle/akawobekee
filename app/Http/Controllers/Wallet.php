@@ -45,6 +45,7 @@ class Wallet
 
         $a = AccountDetail::where("user_id", $user->id)
             ->where('user_type', $user_type)->get();
+
         if ($a->isEmpty())
         {
             AccountDetail::create([

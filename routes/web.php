@@ -41,6 +41,8 @@ Route::prefix("vendor")->group(function (){
         Route::get("plan/{id}/users", [\App\Http\Controllers\Vendor::class, "viewPlanUsers"])->name("view-plan-users");
         Route::get("plan/{id}/users/ajax", [\App\Http\Controllers\Vendor::class, "viewPlanUsersAjax"])->name("plan-users-ajax");
 
+        Route::get("plan/{id}/delete", [\App\Http\Controllers\Vendor::class, "deletePlan"]);
+
         Route::get("plan/{id}/edit", [\App\Http\Controllers\Vendor::class, "showEditPlan"])->name("edit-plan");
         Route::post("plan/{id}/edit", [\App\Http\Controllers\Vendor::class, "editPlan"]);
 

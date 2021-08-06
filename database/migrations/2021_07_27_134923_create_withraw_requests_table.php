@@ -13,7 +13,7 @@ class CreateWithrawRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('withraw_requests', function (Blueprint $table) {
+        Schema::create('withdraw_requests', function (Blueprint $table) {
             $table->id();
             $table->integer("user_id");
             $table->enum('user_type', ['vendor', 'user'])->default('user');
@@ -30,6 +30,6 @@ class CreateWithrawRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('withraw_requests');
+        Schema::dropIfExists('withdraw_requests');
     }
 }

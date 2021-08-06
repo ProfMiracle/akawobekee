@@ -9,6 +9,6 @@ class AccountDetail extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "user_id", "account_name", "account_number", "sort_code", "bank_name"
+        "user_id",'user_type',"account_name", "account_number", "sort_code", "bank_name"
     ];
 }

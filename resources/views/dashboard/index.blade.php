@@ -13,8 +13,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                    Earnings (Monthly)</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                    Wallet balance</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">N{{($wallet)?$wallet->balance:'0.00'}}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -25,7 +25,7 @@
             </div>
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            {{--<div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-success shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -40,10 +40,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--}}
 
             <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+           {{-- <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-info shadow h-100 py-2">
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--}}
 
             <!-- Pending Requests Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -76,8 +76,8 @@
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    Pending Requests</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                    Plans</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{$plan}}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-comments fa-2x text-gray-300"></i>

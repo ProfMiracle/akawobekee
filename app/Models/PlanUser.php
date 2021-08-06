@@ -9,6 +9,6 @@ class PlanUser extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id', 'plan_id', 'name', 'email', 'phone', 'join_date', 'mature_date'
+        'user_id', 'plan_id', 'join_date', 'mature_date'
     ];
 }
