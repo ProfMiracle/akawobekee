@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
-    <title>Ainotion HTML Landing Template</title>
+    <title>AkawoBekee</title>
     <meta name="author" content="tansh">
     <meta name="description" content="HTML Teamplate">
     <meta name="keywords" content="start up, business, one page">
@@ -89,7 +89,7 @@
                 <!-- menu ends -->
 
                 <!-- header button starts -->
-                <a href="#contact" class="dtr-btn dtr-btn-styled btn-red dtr-scroll-link dtr-ml-30">Request a Demo</a>
+                <a href="{{route("register")}}" class="dtr-btn dtr-btn-styled btn-red dtr-scroll-link dtr-ml-30">Register</a>
                 <!-- header button ends -->
 
             </div>
@@ -120,7 +120,7 @@
                         <p> Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt soluta nobis assumenda labore quod maxime dolore magna aliqua. </p>
 
                         <!-- button -->
-                        <a href="#" class="dtr-btn dtr-btn-styled btn-red dtr-mt-10">Request a Demo</a> <a class="dtr-btn btn-blue dtr-icon-btn dtr-video-popup dtr-mt-10" data-autoplay="true" data-vbtype="video" href="https://www.youtube.com/watch?v=kuceVNBTJio"><i class="icon-play1"></i></a>
+                        <a href="#" class="dtr-btn dtr-btn-styled btn-red dtr-mt-10">Request a Demo</a>
                         <p class="text-size-xs dtr-mt-10">No credit card required. Cancel anytime.</p>
                     </div>
                     <!-- column 1 ends -->
@@ -662,67 +662,6 @@
                 </div>
                 <!--== tabs end ==-->
 
-                <!--== faq starts ==-->
-                <h3 class="dtr-mt-20 dtr-mb-40 text-center">Frequently Asked Questions</h3>
-                <div class="row">
-
-                    <!-- column 1 starts -->
-                    <div class="col-12 col-md-6">
-
-                        <!-- faq item starts -->
-                        <div class="faq-item">
-                            <h5 class="faq-heading color-blue">Can I integrate my enterprise software with Ainotion? </h5>
-                            <div class="faq-content">There are many variations of passages of Lorem Ipsum available in some form, by injected humour. There are many variations of passages of Lorem Ipsum available in some form, by injected humour.</div>
-                        </div>
-                        <!-- faq item ends -->
-
-                        <!-- faq item starts -->
-                        <div class="faq-item">
-                            <h5 class="faq-heading color-blue">If I invite my customers to Ainotion? </h5>
-                            <div class="faq-content">It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</div>
-                        </div>
-                        <!-- faq item ends -->
-
-                        <!-- faq item starts -->
-                        <div class="faq-item dtr-mb-0">
-                            <h5 class="faq-heading color-blue">What perks do I get for prepaying my subscription? </h5>
-                            <div class="faq-content">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus. </div>
-                        </div>
-                        <!-- faq item ends -->
-
-                    </div>
-                    <!-- column 1 ends -->
-
-                    <!-- column 2 starts -->
-                    <div class="col-12 col-md-6">
-
-                        <!-- faq item starts -->
-                        <div class="faq-item small-device-space">
-                            <h5 class="faq-heading color-blue">Can I install Saasflix on my own hardware? </h5>
-                            <div class="faq-content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</div>
-                        </div>
-                        <!-- faq item ends -->
-
-                        <!-- faq item starts -->
-                        <div class="faq-item">
-                            <h5 class="faq-heading color-blue">How can I obtain a copy of my data? </h5>
-                            <div class="faq-content">There are many variations of passages of but the majority have suffered alteration in injected humour. </div>
-                        </div>
-                        <!-- faq item ends -->
-
-                        <!-- faq item starts -->
-                        <div class="faq-item">
-                            <h5 class="faq-heading color-blue">How safe is my data? </h5>
-                            <div class="faq-content">Nor again is there anyone because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. </div>
-                        </div>
-                        <!-- faq item ends -->
-
-                    </div>
-                    <!-- column 2 ends -->
-
-                </div>
-                <!--== faq ends ==-->
-
             </div>
         </section>
         <!-- pricing section ends
@@ -770,97 +709,6 @@
             </div>
         </section>
         <!-- process section ends
-================================================== -->
-
-        <!-- blog section starts
-================================================== -->
-        <section id="blog" class="dtr-section dtr-py-100">
-            <div class="container">
-
-                <!-- heading starts -->
-                <div class="dtr-styled-heading text-center">
-                    <h2>News & Articles</h2>
-                </div>
-                <!-- heading ends -->
-
-                <!--== row starts ==-->
-                <div class="row dtr-mt-50">
-
-                    <!-- column 1 starts -->
-                    <div class="col-12 col-md-4">
-
-                        <!-- blog item 1 starts -->
-                        <div class="dtr-blog-item">
-                            <!-- image -->
-                            <div class="dtr-post-img"> <img src="http://tanshcreative.com/ainotion-lp-preview/assets/images/blogpost-img1.jpg" alt="image"> </div>
-                            <div class="dtr-post-content"> <span class="dtr-category color-blue">Marketing</span>
-                                <h5>Why we started Ainotion for small agencies</h5>
-                                <!-- post meta -->
-                                <div class="dtr-post-meta">
-                                    <div class="dtr-meta-user"> <img src="http://tanshcreative.com/ainotion-lp-preview/assets/images/user-4.jpg" alt="image"> </div>
-                                    <div class="dtr-meta-info"> <span>March 2020</span> <span>By Christian Brown</span> </div>
-                                </div>
-                                <!-- post meta ends -->
-
-                            </div>
-                        </div>
-                        <!-- blog item 1 ends -->
-
-                    </div>
-                    <!-- column 1 ends -->
-
-                    <!-- column 2 starts -->
-                    <div class="col-12 col-md-4">
-
-                        <!-- blog item 2 starts -->
-                        <div class="dtr-blog-item">
-                            <!-- image -->
-                            <div class="dtr-post-img"> <img src="http://tanshcreative.com/ainotion-lp-preview/assets/images/blogpost-img2.jpg" alt="image"> </div>
-                            <div class="dtr-post-content"> <span class="dtr-category color-blue">Analytics</span>
-                                <h5>Essential tips to leveraging in AI system</h5>
-                                <!-- post meta -->
-                                <div class="dtr-post-meta">
-                                    <div class="dtr-meta-user"> <img src="http://tanshcreative.com/ainotion-lp-preview/assets/images/user-5.jpg" alt="image"> </div>
-                                    <div class="dtr-meta-info"> <span>August 2020</span> <span>By Dakota Carey</span> </div>
-                                </div>
-                                <!-- post meta ends -->
-
-                            </div>
-                        </div>
-                        <!-- blog item 2 ends -->
-
-                    </div>
-                    <!-- column 2 ends -->
-
-                    <!-- column 3 starts -->
-                    <div class="col-12 col-md-4">
-
-                        <!-- blog item 3 starts -->
-                        <div class="dtr-blog-item">
-                            <!-- image -->
-                            <div class="dtr-post-img"> <img src="http://tanshcreative.com/ainotion-lp-preview/assets/images/blogpost-img3.jpg" alt="image"> </div>
-                            <div class="dtr-post-content"> <span class="dtr-category color-blue">Platform</span>
-                                <h5>Get the most out of support workflow</h5>
-                                <!-- post meta -->
-                                <div class="dtr-post-meta">
-                                    <div class="dtr-meta-user"> <img src="http://tanshcreative.com/ainotion-lp-preview/assets/images/user-6.jpg" alt="image"> </div>
-                                    <div class="dtr-meta-info"> <span>November 2020</span> <span>By Victoria Morgan</span> </div>
-                                </div>
-                                <!-- post meta ends -->
-
-                            </div>
-                        </div>
-                        <!-- blog item 3 ends -->
-
-                    </div>
-                    <!-- column 3 ends -->
-
-                </div>
-                <!--== row starts ==-->
-
-            </div>
-        </section>
-        <!-- blog section ends
 ================================================== -->
 
         <!-- contact section starts
